@@ -7,4 +7,5 @@
 
 require_once '../lib/card.php';
 require_once '../lib/suit.php';
+require_once '../lib/deck.php';
 ?>

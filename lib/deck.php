@@ -18,7 +18,7 @@ class Deck
     
     public function size()
     {
-        return count($this->card);
+        return count($this->cards);
     }
     
     public function populate()
@@ -61,10 +61,10 @@ class Deck
      */
     public function add(Card $Card)
     {
-        if (array_key_exists("{$Card}", $this->cards)) {
-            throw new Exception('Cannot contain the same card twice!');
+        if (in_array($Card, $this->cards)) {
+            throw new \Exception('Cannot contain the same card twice!');
         } else {
-            $this->cards["{$Card}"] = $Card;
+            $this->cards[] = $Card;
         }
     }
     
