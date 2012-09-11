@@ -9,13 +9,25 @@ namespace Poker;
  */
 class Player
 {
+    /**
+     * Player's name
+     * @var string 
+     */
     protected $name;
+    
+    /**
+     * Players Poker Hand
+     * @var Hand 
+     */
     protected $hand;
     
-    public function __construct($name, $hand)
+    /**
+     * Constructor
+     * @param string $name 
+     */
+    public function __construct($name)
     {
         $this->name = $name;
-        $this->hand = $hand;
     }
     
     public function getName()
