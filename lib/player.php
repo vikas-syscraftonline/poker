@@ -87,7 +87,39 @@ class Player
         
     }
     
+    /**
+     * Sets the players blind
+     * @param Blind $blind
+     * @return \Poker\Player 
+     */
+    public function setBlind(Blind $blind)
+    {
+        $this->blind = $blind;
+        return $this;
+    }
     
+    /**
+     * Gets the players blind
+     * @return \Poker\Blind
+     */
+    public function getBlind()
+    {
+        return $this->blind;
+    }
+    
+    /**
+     * Determines if a player has a blind
+     * @return boolean 
+     */
+    public function hasBlind()
+    {
+        if($this->blind instanceof Blind)
+        {
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
 
 ?>
