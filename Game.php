@@ -1,8 +1,6 @@
 <?php
 
-include 'lib/Card.php';
-include 'lib/Suit.php';
-include 'lib/Deck.php';
+include 'auto_loader.php';
 
 $deck = new Poker\Deck();
 $deck->shuffle();
