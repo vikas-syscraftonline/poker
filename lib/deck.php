@@ -11,9 +11,19 @@ class Deck
 {
     protected $cards;
     
-    public function __construct()
+    /**
+     * Constructor
+     * @param boolean $populate - Whether to auto populate the deck
+     */
+    public function __construct($populate = true)
     {
         $this->cards = array();
+        
+        // Check whether we should auto-populate the deck
+        if($populate)
+        {
+            $this->populate();
+        }
     }
     
     public function size()
@@ -24,24 +34,23 @@ class Deck
     public function populate()
     {
         $suits = Suit::getSuits();
-        
+
         foreach($suits as $suit)
         {
-            $this->cards[] = Card::aceOf($suit);
-            $this->cards[] = Card::twoOf($suit);
-            $this->cards[] = Card::threeOf($suit);
-            $this->cards[] = Card::fourOf($suit);
-            $this->cards[] = Card::fiveOf($suit);
-            $this->cards[] = Card::sixOf($suit);
-            $this->cards[] = Card::sevenOf($suit);
-            $this->cards[] = Card::eightOf($suit);
-            $this->cards[] = Card::nineOf($suit);
-            $this->cards[] = Card::tenOf($suit);
-            $this->cards[] = Card::jackOf($suit);
-            $this->cards[] = Card::queenOf($suit);
-            $this->cards[] = Card::kingOf($suit);
+            $this->add(Card::aceOf($suit));
+            $this->add(Card::twoOf($suit));
+            $this->add(Card::threeOf($suit));
+            $this->add(Card::fourOf($suit));
+            $this->add(Card::fiveOf($suit));
+            $this->add(Card::sixOf($suit));
+            $this->add(Card::sevenOf($suit));
+            $this->add(Card::eightOf($suit));
+            $this->add(Card::nineOf($suit));
+            $this->add(Card::tenOf($suit));
+            $this->add(Card::jackOf($suit));
+            $this->add(Card::queenOf($suit));
+            $this->add(Card::kingOf($suit));
         }
-        
         return $this->cards;
     }
     

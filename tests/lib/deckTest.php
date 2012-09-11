@@ -14,7 +14,6 @@ class deckTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->deck = new Deck();
-        $this->deck->populate();
     }
     
     public function tearDown()
@@ -34,7 +33,7 @@ class deckTest extends \PHPUnit_Framework_TestCase
     
     public function testAddingCardToDeck()
     {
-        $this->deck = new Deck();
+        $this->deck = new Deck(false);
         $card = Card::eightOf(Suit::DIAMONDS);
         $this->deck->add($card);
         $this->assertContains($card, $this->deck->getCards(), 'Deck doesn\'t contain the added card');
