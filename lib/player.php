@@ -22,6 +22,17 @@ class Player
     protected $hand;
     
     /**
+     * @var Blind 
+     */
+    protected $blind;
+    
+    /**
+     * States whether the player has folded/mucked their hand
+     * @var boolean 
+     */
+    protected $folded = false;
+    
+    /**
      * Constructor
      * @param string $name 
      */
@@ -36,12 +47,47 @@ class Player
     }
     
     /**
+     * Matches the last bet/raise 
+     */
+    public function call()
+    {
+        
+    }
+    
+    /**
+     * Indicates a player wishes to pass
+     * latest round of betting, but retain their hand 
+     */
+    public function check()
+    {
+        
+    }
+    
+    /**
+     * Raise players bet 
+     */
+    public function raise($value)
+    {
+        // Get Pots current bet, and raise it by the value provided
+    }
+    
+    /**
+     *  Player wishes to forfeit interest in current pot
+     */
+    public function fold()
+    {
+        
+    }
+    
+    /**
      * Calculates players hand
      */
     public function showHand()
     {
         
     }
+    
+    
 }
 
 ?>
